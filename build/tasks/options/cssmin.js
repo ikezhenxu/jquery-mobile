@@ -1,13 +1,13 @@
-var files = require( "../../files.js" );
-var path = require( "path" );
-var dist = "dist" + path.sep;
+module.exports = function( grunt ) {
+	var files = require( "../../files.js" )( grunt );
 
-module.exports = {
-	options: {
-		banner: "<%= bannerMin =>",
-		keepSpecialComments: 0
-	},
-	minify: {
-		files: files.getMinifiedCSSFiles( dist )
-	}
-}
+	return {
+		options: {
+			banner: "<%= bannerMin =>",
+			keepSpecialComments: 0
+		},
+		minify: {
+			files: files.getMinifiedCSSFiles( "<%= dist %>" )
+		}
+	};
+};

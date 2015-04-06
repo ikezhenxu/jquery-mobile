@@ -1,5 +1,4 @@
 var _ = require( "underscore" );
-
 module.exports = function( grunt ){
 	return {
 		options: {
